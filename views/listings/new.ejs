@@ -1,0 +1,241 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WanderLust</title>
+  </head> -->
+
+
+  <% layout("/layouts/boilerplate")%>
+
+
+  <body>
+    <h3>Create a New Listing</h3>
+    <div class="row">
+    <div class="col-8 offset-2">
+
+<!-- in the form , I have add [nonovalidate class="needs-validation"] for removing default syle and applied bootstaps custom style. -->
+
+
+    <form method="POST" 
+    action="/listings" 
+    novalidate class="needs-validation"
+     enctype="multipart/form-data"
+     >
+<!-- ---------------------------------------------------------------------------------------------------------------- -->
+<!-- (class="mb-3" this ia bootstrap style . mb= margin-bottom) -->
+<div class="mb-3">
+<label for="title" class="form-label">Title</label>
+<input 
+name="listing[title]"
+placeholder="enter title"
+type="text"
+class="form-control"
+required
+   />
+   <div class="valid-feedback">This title look crazy</div>
+   <div class="invalid-feedback">Please fill up ! your title</div>
+
+
+</div>
+<!-- ---------------------------------------------------------------------------------------------------------------- -->
+
+
+<div class="mb-3">
+<label for="description" class="form-label">Description</label>
+<textarea
+  name="listing[description]"
+  class="form-control"
+  required
+></textarea>
+   <div class="valid-feedback">Smoothly described</div>
+   <div class="invalid-feedback">Describe it!</div>
+
+
+</div>
+<!-- ---------------------------------------------------------------------------------------------------------------- -->
+
+<!-- -------------------- filterization code -------------------- -->
+<!-- select multiple categories while creating new listing so filter can work later -->
+<div class="mb-3">
+  <label class="form-label">Categories</label>
+  <div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="listing[categories][]" value="trending" id="cat-trending">
+      <label class="form-check-label" for="cat-trending">Trending</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="listing[categories][]" value="frequently-search" id="cat-frequently-search">
+      <label class="form-check-label" for="cat-frequently-search">Frequently Search</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="listing[categories][]" value="wifi" id="cat-wifi">
+      <label class="form-check-label" for="cat-wifi">Free WiFi</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="listing[categories][]" value="beach" id="cat-beach">
+      <label class="form-check-label" for="cat-beach">Beach</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="listing[categories][]" value="wow" id="cat-wow">
+      <label class="form-check-label" for="cat-wow">Wow</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="listing[categories][]" value="cities" id="cat-cities">
+      <label class="form-check-label" for="cat-cities">Cities</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="listing[categories][]" value="forest" id="cat-forest">
+      <label class="form-check-label" for="cat-forest">Forest</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" name="listing[categories][]" value="house" id="cat-house">
+      <label class="form-check-label" for="cat-house">House</label>
+    </div>
+  </div>
+</div>
+<!-- ----------------------------------------------------------- -->
+
+<!-- old image format in form which only add links -->
+
+
+<!-- <div class="mb-3">
+ <label for="image"
+  class="form-label">Image
+</label>
+ <input
+        name="listing[image]"
+        placeholder="enter image URL/Link"
+        type="text"
+        class="form-control"
+      />
+</div> -->
+
+
+
+ <!-- new Image format which helps u to upload image -->
+<div class="mb-3">
+ <label for="image"
+  class="form-label">new Image 
+</label>
+ <input
+        name="listing[image]"
+        type="file"
+        class="form-control"
+        required
+      />
+    
+</div>
+<!-- ---------------------------------------------------------------------------------------------------------------- -->
+<div class="row">
+
+
+<div class="mb-3 col-md-4">
+   <label for="price" class="form-label">Price</label>
+    <input name="listing[price]" placeholder="enter price" type="text" 
+    class="form-control" 
+    required/>
+  <div class="valid-feedback">Ah!Good price</div>
+   <div class="invalid-feedback">Enter the price</div>
+
+
+</div>
+<!-- ---------------------------------------------------------------------------------------------------------------- -->
+
+
+<div class="mb-3 col-md-8">   
+  <label for="country" class="form-label">Country</label>
+  <input name="listing[country]" placeholder="enter country" type="text"
+  class="form-control" 
+  required/>
+  <div class="valid-feedback">It's a good country for tour</div>
+   <div class="invalid-feedback">you have forget to add a country.</div>
+
+
+</div>
+
+
+</div>
+<!-- ---------------------------------------------------------------------------------------------------------------- -->
+
+
+<div class="mb-3">
+    <label for="location" class="form-label">Location</label>
+  <input
+  name="listing[location]"
+  placeholder="enter location"
+  type="text"
+  class="form-control"
+  required
+  />
+  <div class="valid-feedback">I have go your location</div>
+   <div class="invalid-feedback">Send me your location</div>
+
+
+</div>
+
+
+<!-- ---------------------------------------------------------------------------------------------------------------- -->
+
+
+      <button class="btn btn-dark">Add</button>
+<br><br>
+<!-- ---------------------------------------------------------------------------------------------------------------- -->
+</form>
+</div>
+</div>
+
+
+<!-- <----------------------------------------------old new route version----------------------------------------------------> 
+      <!-- <input name="listing[title]" placeholder="enter title" type="text" /> -->
+      <!-- <br /><br /> -->
+
+
+      <!-- <textarea
+        name="listing[description]"
+        placeholder="enter description"
+      ></textarea>
+      <br /><br /> -->
+
+
+
+      <!-- <input
+        name="listing[image]"
+        placeholder="enter image URL/Link"
+        type="text"
+      />
+      <br /><br /> -->
+
+
+
+      <!-- <input name="listing[price]" placeholder="enter price" type="number" />
+      <br /><br /> -->
+
+
+
+      <!-- <input name="listing[country]" placeholder="enter country" type="text" /> -->
+      <!-- <br /><br /> -->
+
+
+<!-- 
+      <input
+        name="listing[location]"
+        placeholder="enter location"
+        type="text"
+      />
+      <br /><br /> -->
+
+
+
+      <!-- <button>Add</button> -->
+  </body>
+
+
+
+  <style>
+    body{
+      background-color:#FFFFED!important;
+    }
+  </style>
+<!-- </html> -->

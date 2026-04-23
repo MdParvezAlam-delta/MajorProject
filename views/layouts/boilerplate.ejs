@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WANDERLUST</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- bootstrap connection code :for css -->
+    <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" 
+    crossorigin="anonymous"
+    />
+
+    <!-- cdn link for working font awesome compass tag which is in navbar.ejs -->
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" 
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" 
+    crossorigin="anonymous" 
+    referrerpolicy="no-referrer" />
+
+    <!-- linking with rating.css file -->
+    <link rel="stylesheet" href="/css/rating.css">
+
+    <!-- <-----Mapbox Code -------> 
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.js"></script>
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+<!-- including navbar.ejs in boiler plate -->
+<%- include("../includes/navbar.ejs")%>
+
+<!-- used effect on body to all the file -->
+<div class="container flex-grow-1">
+    <%- include("../includes/flash.ejs")%> 
+    <%- body %>
+</div>
+
+<!-- including footer.ejs in boiler plate -->
+<%- include("../includes/footer.ejs")%>
+  
+<!-- bootstrap connection code :for js -->
+<script 
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" 
+crossorigin="anonymous">
+</script>
+
+<!-- bootstrap connection code :for js for provide a standard alert message for all type of browser-->
+<script src="/js/script.js"></script>
+
+</body>
+</html>
