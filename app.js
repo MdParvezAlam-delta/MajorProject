@@ -138,6 +138,9 @@ app.use("/listings",listingRoute);
 app.use("/listings/:id/reviews",reviewRoute );
 app.use("/", userRoute );
 
+app.get("/", (req, res) => {
+  res.redirect("/listings");
+});
 // --------------------------------------------------------------------------------------------------------
 
 // Index Route - list all listings
